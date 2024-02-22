@@ -65,4 +65,13 @@ describe('e2e test',()=>{
         Form.ratingStars().should('have.attr','tabindex','-1')
         Form.dateBox().should('have.attr','placeholder','Please input date (M/d/yyyy)')
     })
+
+    it('Enable Immersive Reader',()=>{
+        Form.threeDotBtn().click()
+        Form.immersiveReader().contains('Enable Immersive Reader').click()
+        cy.wait(2000)
+        // Assertion
+        cy.get('.-a-246').should('be.visible')
+        
+    })
 })
