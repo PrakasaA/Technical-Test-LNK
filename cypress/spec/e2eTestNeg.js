@@ -8,6 +8,7 @@ describe('E2E Test Negatif',()=>{
 
     it('Submit Without Data',()=>{
         Form.submitBtn().click()
+        cy.wait(3000)
 
         // Assertion
         cy.get('.-sf-47').should('be.visible')
